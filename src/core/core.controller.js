@@ -698,6 +698,11 @@ module.exports = function(Chart) {
 		getDatasetMeta: function(datasetIndex) {
 			var me = this;
 			var dataset = me.data.datasets[datasetIndex];
+
+			if (dataset===undefined) {
+				dataset={}
+			}
+
 			if (!dataset._meta) {
 				dataset._meta = {};
 			}
